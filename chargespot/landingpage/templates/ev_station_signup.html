@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Station Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            display: grid;
+            gap: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Station Registration Form</h2>
+    <form action="/submit_registration" method="POST">
+        <!-- Operator Information -->
+        <h3>Operator Information</h3>
+        <label for="legalName">Legal Name:</label>
+        <input type="text" id="legalName" name="legalName" required>
+
+        <label for="businessStructure">Business Structure:</label>
+        <select id="businessStructure" name="businessStructure" required>
+            <option value="Corporation">Corporation</option>
+            <option value="LLC">LLC</option>
+            <option value="Sole Proprietorship">Sole Proprietorship</option>
+        </select>
+
+        <label for="contactName">Contact Name:</label>
+        <input type="text" id="contactName" name="contactName" required>
+
+        <label for="contactEmail">Email:</label>
+        <input type="email" id="contactEmail" name="contactEmail" required>
+
+        <label for="contactPhone">Phone Number:</label>
+        <input type="tel" id="contactPhone" name="contactPhone" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="businessLicense">Business License or Registration:</label>
+        <input type="file" id="businessLicense" name="businessLicense" accept=".pdf,.doc,.docx" required>
+
+        <label for="businessLicense">Media:</label>
+        <input type="file" name="media_file" accept="image/*, video/*">
+
+        <label for="tin">Tax Identification Number (TIN):</label>
+        <input type="text" id="tin" name="tin" required>
+
+        <!-- Station Information -->
+        <h3>Station Information</h3>
+        <label for="stationName">Station Name or ID:</label>
+        <input type="text" id="stationName" name="stationName" required>
+
+        <label for="locationAddress">Location Address:</label>
+        <textarea id="locationAddress" name="locationAddress" rows="3" required></textarea>
+
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+
+        <label for="stationType">Station Type:</label>
+        <select id="stationType" name="stationType" required>
+            <option value="Fast Charger">Fast Charger</option>
+            <option value="Level 2 Charger">Level 2 Charger</option>
+            <option value="DC Charger">DC Charger</option>
+        </select>
+
+        <label for="numChargingPoints">Number of Charging Points:</label>
+        <input type="number" id="numChargingPoints" name="numChargingPoints" required>
+
+        <label for="powerOutput">Power Output (kW):</label>
+        <input type="number" id="powerOutput" name="powerOutput" required>
+
+        <label for="connectorTypes">Connector Types:</label>
+        <input type="text" id="connectorTypes" name="connectorTypes" required>
+
+        <label for="paymentMethods">Payment Methods:</label>
+        <input type="text" id="paymentMethods" name="paymentMethods" required>
+
+        <!-- Technical Details -->
+        <h3>Technical Details</h3>
+        <label for="networkConnectivity">Network Connectivity:</label>
+        <input type="text" id="networkConnectivity" name="networkConnectivity" required>
+
+        <label for="softwarePlatform">Software or Platform:</label>
+        <input type="text" id="softwarePlatform" name="softwarePlatform" required>
+
+        <label for="maintenanceSchedule">Maintenance Schedule:</label>
+        <textarea id="maintenanceSchedule" name="maintenanceSchedule" rows="3" required></textarea>
+
+        <!-- Financial Information -->
+        <h3>Financial Information</h3>
+        <label for="billingTerms">Billing and Payment Terms:</label>
+        <textarea id="billingTerms" name="billingTerms" rows="3" required></textarea>
+
+        <label for="feeStructure">Fee Structure:</label>
+        <textarea id="feeStructure" name="feeStructure" rows="3" required></textarea>
+
+        <!-- Additional Information -->
+        <h3>Additional Information</h3>
+        <label for="insurance">Insurance:</label>
+        <input type="file" id="insurance" name="insurance" accept=".pdf,.doc,.docx" required>
+
+        <label for="accessibility">Accessibility:</label>
+        <textarea id="accessibility" name="accessibility" rows="3" required></textarea>
+
+        <label for="emergencyContact">Emergency Contact Information:</label>
+        <textarea id="emergencyContact" name="emergencyContact" rows="3" required></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Register Station</button>
+    </form>
+
+    <div class="login-link">
+        <p>Already a member? <a href={% url 'ev_station_login' %}>Login here</a></p>
+    </div>
+</div>
+
+</body>
+</html>

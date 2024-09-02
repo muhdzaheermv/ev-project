@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href={% static "img/logo.png" %} type="image/x-icon">
     <!--REMIX ICONS-->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/80c3c1081e.js" crossorigin="anonymous"></script>
@@ -39,8 +39,9 @@
                     <li class="nav__item">
                         <a href="#featured" class="nav__link">Feature</a>
                     </li>
+                    </li>
                     <li class="nav__item">
-                        <a href="#footer" class="nav__link">Contact us</a>
+                        <a href="{% url 'ev_login' %}" class="nav__link">Login</a>
                     </li>
                 </ul>
                 <div class="nav__close" id="nav-close">
@@ -90,7 +91,7 @@
                         <h3 class="home__car-name">BATTERY</h3>
                     </div>
                 </div>
-                <a href="#" class="home__button">Start</a>
+                <a href="{% url 'ev_login' %}" class="home__button">Start</a>
             </div>
         </section>
         <section class="about section" id="about">
@@ -249,7 +250,7 @@
             <img src={% static "img/map.svg" %} alt="map" class="features__map">    
         </section>
         <section class="featured section" id="featured">
-                <h2 class="section__title">Choose Your Vehicle</h2>
+                <h2 class="section__title">Choose Your Station</h2>
                 <div class="featured__container container">
                     <ul class="featured__filters">
                         <li>
@@ -408,7 +409,7 @@
             <div class="footer__content">
                 <a href="#" class="footer__logo">
                     <!-- <i class="ri-steering-line"></i> -->
-                    <img style="width: 20px; height: 20px" class="logo-img" src="./img/logo.png" %} alt="">
+                    <img style="width: 20px; height: 20px" class="logo-img" src={% static "img/logo.png" %} alt="">
                     ChargeSpot
                 </a>
                 <p class="footer__description">Top global EV brands?<br>
